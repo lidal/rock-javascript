@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script type="text/javascript">
+	function  computerPlay(){
+		let hand;
+		let choice = Math.floor(Math.random()*3);
+		if(choice === 1){
+			hand = "rock";
+		}
+		else if(choice === 2){
+			hand = "paper";
+		}
+		else{
+			hand = "scissors";
+		}
+		return hand;
+	}
+	function playRound(playerSelection, computerSelection){
+		//let lowerPlayerSel = playerSelection.toLowercase();
+		let lowerPlayerSel = playerSelection;
+		if(lowerPlayerSel === computerSelection){
+			return "It's a draw!"
+		}else if (lowerPlayerSel == "rock"){
+			if(computerSelection == "paper"){
+				let response = "You loose! " + computerSelection + " beats " + playerSelection;
+				return response
+			}else{
+				let response = "You win! " + playerSelection + " beats " + computerSelection;
+				return response
+			}
+		}else if (lowerPlayerSel == "paper"){
+			if(computerSelection == "scissors"){
+				let response = "You loose! " + computerSelection + " beats " + playerSelection;
+				return response
+			}else{
+				let response = "You win! " + playerSelection + " beats " + computerSelection;
+				return response
+			}
+		}else if (lowerPlayerSel == "scissors"){
+			if(computerSelection == "rock"){
+				let response = "You loose! " + computerSelection + " beats " + playerSelection;
+				return response
+			}else{
+				let response = "You win! " + playerSelection + " beats " + computerSelection;
+				return response
+			}
+		}else{
+			let response = "Not a valid response!"
+			return response
+			}	
+		}
+	const playerSelection = 'rock'
+	const computerSelection = computerPlay()
+	console.log(playRound(playerSelection, computerSelection))
+
+</script>
+
+
+
+</body>
+</html>
